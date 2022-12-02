@@ -1,5 +1,6 @@
 package ca.durhamcollege.oop3200f2022week12b.Controllers;
 import ca.durhamcollege.oop3200f2022week12b.Managers.SceneManager;
+import ca.durhamcollege.oop3200f2022week12b.Managers.Utility;
 import ca.durhamcollege.oop3200f2022week12b.core.Vector2;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,12 +32,6 @@ public class ShapeViewController implements Initializable
     private ListView<Vector2> Vector2ListView;
 
     @FXML
-    private TextField XInputTextField;
-
-    @FXML
-    private TextField YInputTextField;
-
-    @FXML
     private Spinner<Double> XInputSpinner;
 
     @FXML
@@ -45,16 +40,14 @@ public class ShapeViewController implements Initializable
     @FXML
     void AddVectorButton_Clicked(ActionEvent event)
     {
-        if(!XInputTextField.getText().isEmpty() && !YInputTextField.getText().isEmpty())
-        {
-            float x = Float.parseFloat(XInputTextField.getText());
-            float y = Float.parseFloat(YInputTextField.getText());
+            float x = XInputSpinner.getValue().floatValue();
+            float y = YInputSpinner.getValue().floatValue();
+
             Vector2 newVector2 = new Vector2(x, y);
             Vector2ListView.getItems().add(newVector2);
-            XInputTextField.clear();
-            YInputTextField.clear();
+            XInputSpinner.getEditor().setText("0");
+            YInputSpinner.getEditor().setText("0");
             TotalDistanceTextView.clear();
-        }
     }
 
     @FXML
@@ -99,20 +92,10 @@ public class ShapeViewController implements Initializable
             }
         });
 
-        XInputTextField.textProperty().addListener((obs, oldValue, newValue) ->{
-            if (!newValue.matches("\\d*"))
-            {
-                XInputTextField.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        });
-
-        YInputTextField.textProperty().addListener((obs, oldValue, newValue) ->{
-            if (!newValue.matches("\\d*"))
-            {
-                YInputTextField.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        });
-
+        // Configure the XInputSpinner
+        Utility.Instance().ConfigureVector2Spinner(XInputSpinner, -1000.0, 1000.0, 0.0, 0.1);
+        // Configure the YInputSpinner
+        Utility.Instance().ConfigureVector2Spinner(YInputSpinner, -1000.0, 1000.0, 0.0, 0.1);
 
     }
 

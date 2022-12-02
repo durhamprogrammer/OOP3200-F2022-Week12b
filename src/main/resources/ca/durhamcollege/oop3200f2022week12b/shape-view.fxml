@@ -88,8 +88,8 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Spinner fx:id="XInputSpinner" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Spinner fx:id="YInputSpinner" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Spinner fx:id="XInputSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Spinner fx:id="YInputSpinner" editable="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                     </children>
                     <BorderPane.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
