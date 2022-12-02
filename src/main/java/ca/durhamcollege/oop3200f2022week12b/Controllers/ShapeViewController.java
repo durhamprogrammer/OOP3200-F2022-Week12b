@@ -37,6 +37,12 @@ public class ShapeViewController implements Initializable
     private TextField YInputTextField;
 
     @FXML
+    private Spinner<Double> XInputSpinner;
+
+    @FXML
+    private Spinner<Double> YInputSpinner;
+
+    @FXML
     void AddVectorButton_Clicked(ActionEvent event)
     {
         if(!XInputTextField.getText().isEmpty() && !YInputTextField.getText().isEmpty())
