@@ -78,12 +78,12 @@
                                 <Insets left="5.0" right="5.0" />
                             </GridPane.margin>
                         </TextField>
-                  <Button fx:id="DrawShapeButton" mnemonicParsing="false" onAction="#DrawShapeButton_Clicked" text="Draw Shape" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                  <Button fx:id="DrawShapeButton" mnemonicParsing="false" onAction="#DrawShapeButton_Clicked" text="Draw Line" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Label text="Select at least two Vectors  to draw  a Shape" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                  <Label text="Select two Vectors to draw a Line" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="6">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

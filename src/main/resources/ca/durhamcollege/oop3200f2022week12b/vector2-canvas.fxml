@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.durhamcollege.oop3200f2022week12b.Controllers.Vector2CanvasController">
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -16,7 +15,7 @@
             <Canvas fx:id="canvas" height="300.0" width="570.0" BorderPane.alignment="CENTER" />
          </center>
          <top>
-            <Label text="Draw Shape" BorderPane.alignment="CENTER">
+            <Label text="Draw Line" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

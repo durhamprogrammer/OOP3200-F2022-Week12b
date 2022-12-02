@@ -61,7 +61,9 @@ public class ShapeViewController implements Initializable
     @FXML
     void DrawShapeButton_Clicked(ActionEvent event) throws IOException
     {
-        SceneManager.Instance().changeScene(event, "vector2-canvas.fxml");
+        var selectedItemsList = Vector2ListView.getSelectionModel().getSelectedItems().stream().toList();
+
+        SceneManager.Instance().changeScene(event, "vector2-canvas.fxml", selectedItemsList);
     }
 
 
@@ -82,7 +84,7 @@ public class ShapeViewController implements Initializable
                 hideDistanceUI();
             }
 
-            if(Vector2ListView.getSelectionModel().getSelectedItems().size() >= 2)
+            if(Vector2ListView.getSelectionModel().getSelectedItems().size() == 2)
             {
                 DrawShapeButton.setVisible(true);
             }

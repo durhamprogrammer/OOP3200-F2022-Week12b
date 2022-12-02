@@ -1,20 +1,25 @@
 package ca.durhamcollege.oop3200f2022week12b.Controllers;
 
 import ca.durhamcollege.oop3200f2022week12b.Managers.SceneManager;
+import ca.durhamcollege.oop3200f2022week12b.core.Vector2;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Vector2CanvasController implements Initializable
 {
+    public List<Vector2> vector2List;
 
     @FXML
     private Button VectorListButton;
@@ -32,6 +37,18 @@ public class Vector2CanvasController implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         drawCanvasBorder();
+
+        vector2List = SceneManager.Instance().vector2List;
+
+        // Draw the line
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        float line_width = 1.0f;
+        gc.setStroke(Color.BLACK);
+        gc.setLineWidth(line_width);
+        gc.strokeLine(vector2List.get(0).getX(), vector2List.get(0).getY(), vector2List.get(1).getX(), vector2List.get(1).getY());
+
+
+
     }
 
     private void drawCanvasBorder()
